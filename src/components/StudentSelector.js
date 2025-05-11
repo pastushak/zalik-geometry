@@ -1,8 +1,8 @@
-import React from 'react';
-import './StudentSelector.css';
+import React, { memo } from 'react';
+import './styles/StudentSelector.css';
 import { students } from '../data/students';
 
-function StudentSelector({ selectedStudent, onStudentSelect }) {
+const StudentSelector = memo(function StudentSelector({ selectedStudent, onStudentSelect }) {
   return (
     <div className="student-selector">
       <label htmlFor="student-select">Оберіть учня:</label>
@@ -20,6 +20,6 @@ function StudentSelector({ selectedStudent, onStudentSelect }) {
       </select>
     </div>
   );
-}
+});
 
 export default StudentSelector;

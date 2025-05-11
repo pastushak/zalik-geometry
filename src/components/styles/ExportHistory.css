@@ -1,19 +1,22 @@
 .export-history {
   text-align: center;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .export-button {
   background-color: #3498db;
   border: none;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 0;
   text-align: center;
   text-decoration: none;
+  width: 100%;
+  max-width: 300px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s;
+  min-height: 44px;
 }
 
 .export-button:hover {
@@ -23,4 +26,12 @@
 .export-button:disabled {
   background-color: #bdc3c7;
   cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .export-button {
+    padding: 8px 0;
+    font-size: 14px;
+    max-width: 250px;
+  }
 }

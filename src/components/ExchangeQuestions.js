@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ExchangeQuestions.css';
+import './styles/ExchangeQuestions.css';
 
 function ExchangeQuestions({ onExchange, selectedStudent }) {
   const [exchangeType, setExchangeType] = useState('hardToNormal');

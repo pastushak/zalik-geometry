@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import './QuestionBlock.css';
+import React, { useState, useCallback, memo } from 'react';
+import './styles/QuestionBlock.css';
 
-function QuestionBlock({ title, questions, onQuestionSelected }) {
+const QuestionBlock = memo(function QuestionBlock({ title, questions, onQuestionSelected }) {
   const [selectedQuestion, setSelectedQuestion] = useState(null);
   const [selectedQuestions, setSelectedQuestions] = useState([]);
+  const [animating, setAnimating] = useState(false);
 
-  const handleSelectQuestion = () => {
+  const handleSelectQuestion = useCallback(() => {
     // Фільтруємо питання, які ще не були обрані
     const availableQuestions = questions.filter(q => !selectedQuestions.includes(q));
     
@@ -18,17 +19,24 @@ function QuestionBlock({ title, questions, onQuestionSelected }) {
     const randomIndex = Math.floor(Math.random() * availableQuestions.length);
     const question = availableQuestions[randomIndex];
     
-    setSelectedQuestion(question);
-    setSelectedQuestions([...selectedQuestions, question]);
+    // Анімація для мобільних
+    setAnimating(true);
+    setTimeout(() => {
+      setAnimating(false);
+      setSelectedQuestion(question);
+      setSelectedQuestions(prevSelected => [...prevSelected, question]);
     
-    // Передаємо обране питання наверх
-    onQuestionSelected(question);
-  };
+      // Передаємо обране питання наверх
+      onQuestionSelected(question);
+    }, 300);
+  }, [questions, selectedQuestions, onQuestionSelected]);
 
   return (
-    <div className="question-block">
+    <div className={`question-block ${animating ? 'question-animating' : ''}`}>
       <h2>{title}</h2>
-      <button onClick={handleSelectQuestion}>Обрати</button>
+      <button onClick={handleSelectQuestion} disabled={animating}>
+        {animating ? 'Обираємо...' : 'Обрати питання'}
+      </button>
       {selectedQuestion && (
         <div className="selected-question">
           <h3>Обране питання:</h3>
@@ -37,6 +45,6 @@ function QuestionBlock({ title, questions, onQuestionSelected }) {
       )}
     </div>
   );
-}
+});
 
 export default QuestionBlock;
