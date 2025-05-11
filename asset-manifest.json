@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/zalik-geometry/static/css/main.f26bc1ca.css",
+    "main.js": "/zalik-geometry/static/js/main.d66984cf.js",
+    "static/js/453.3b959bc1.chunk.js": "/zalik-geometry/static/js/453.3b959bc1.chunk.js",
+    "index.html": "/zalik-geometry/index.html",
+    "main.f26bc1ca.css.map": "/zalik-geometry/static/css/main.f26bc1ca.css.map",
+    "main.d66984cf.js.map": "/zalik-geometry/static/js/main.d66984cf.js.map",
+    "453.3b959bc1.chunk.js.map": "/zalik-geometry/static/js/453.3b959bc1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f26bc1ca.css",
+    "static/js/main.d66984cf.js"
+  ]
+}
