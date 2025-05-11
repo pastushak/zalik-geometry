@@ -1,0 +1,48 @@
+.question-block {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+  background-color: #f9f9f9;
+}
+
+.question-block h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.question-block button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.question-block button:hover {
+  background-color: #45a049;
+}
+
+.selected-question {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #e9f7ef;
+  border-radius: 4px;
+}
+
+.selected-question h3 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.selected-question p {
+  margin: 5px 0;
+}

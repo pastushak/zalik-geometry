@@ -1,0 +1,26 @@
+.export-history {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.export-button {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.export-button:hover {
+  background-color: #2980b9;
+}
+
+.export-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
