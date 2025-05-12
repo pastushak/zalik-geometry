@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/zalik-geometry/static/css/main.7ca60e8d.css",
-    "main.js": "/zalik-geometry/static/js/main.f7ce28d1.js",
+    "main.css": "/zalik-geometry/static/css/main.81f9902d.css",
+    "main.js": "/zalik-geometry/static/js/main.86cb5db1.js",
     "index.html": "/zalik-geometry/index.html",
-    "main.7ca60e8d.css.map": "/zalik-geometry/static/css/main.7ca60e8d.css.map",
-    "main.f7ce28d1.js.map": "/zalik-geometry/static/js/main.f7ce28d1.js.map"
+    "main.81f9902d.css.map": "/zalik-geometry/static/css/main.81f9902d.css.map",
+    "main.86cb5db1.js.map": "/zalik-geometry/static/js/main.86cb5db1.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ca60e8d.css",
-    "static/js/main.f7ce28d1.js"
+    "static/css/main.81f9902d.css",
+    "static/js/main.86cb5db1.js"
   ]
 }
