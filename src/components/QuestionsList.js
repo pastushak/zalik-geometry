@@ -78,14 +78,32 @@ function QuestionsList({ selectedQuestions }) {
               <th>Час</th>
               <th>Учень</th>
               <th>Питання</th>
+              <th>Статус</th>
             </tr>
           </thead>
           <tbody>
             {filteredQuestions.map((item, index) => (
-              <tr key={index} className={item.question.includes('ОБМІН') ? 'exchange-row' : ''}>
+              <tr 
+                key={index} 
+                className={`
+                  ${item.question.includes('ОБМІН') ? 'exchange-row' : ''} 
+                  ${item.isRemoved ? 'removed-question' : ''}
+                `}
+              >
                 <td>{item.timestamp}</td>
                 <td>{item.student}</td>
-                <td>{item.question}</td>
+                <td className={item.isRemoved ? 'strikethrough' : ''}>
+                  {item.question}
+                </td>
+                <td>
+                  {item.isRemoved ? (
+                    <span className="status-badge removed">Обміняно</span>
+                  ) : item.question.includes('ОБМІН') ? (
+                    <span className="status-badge exchange">Обмін</span>
+                  ) : (
+                    <span className="status-badge active">Активне</span>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

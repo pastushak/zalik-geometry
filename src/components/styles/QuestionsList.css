@@ -79,7 +79,7 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
-  min-width: 300px;
+  min-width: 400px;
 }
 
 .questions-table th,
@@ -107,14 +107,64 @@
   background-color: var(--border-color);
 }
 
-/* Стиль для рядків з обміном */
+/* Стилі для різних типів рядків */
 .exchange-row {
   background-color: #fff3e0 !important;
   font-weight: bold;
 }
 
+.removed-question {
+  opacity: 0.7;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}
+
+/* Статуси */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.status-badge.active {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-badge.removed {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.status-badge.exchange {
+  background-color: #fff3e0;
+  color: #ef6c00;
+}
+
+/* Темна тема */
 body.dark-mode .exchange-row {
   background-color: #4a3c1a !important;
+}
+
+body.dark-mode .status-badge.active {
+  background-color: #1b5e20;
+  color: #a5d6a7;
+}
+
+body.dark-mode .status-badge.removed {
+  background-color: #b71c1c;
+  color: #ffcdd2;
+}
+
+body.dark-mode .status-badge.exchange {
+  background-color: #bf360c;
+  color: #ffcc80;
 }
 
 .no-results {
@@ -165,6 +215,11 @@ body.dark-mode .exchange-row {
   .questions-table th,
   .questions-table td {
     padding: 5px;
+  }
+  
+  .status-badge {
+    font-size: 10px;
+    padding: 3px 6px;
   }
   
   .filter-controls {

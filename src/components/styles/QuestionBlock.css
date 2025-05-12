@@ -1,27 +1,42 @@
 .question-block {
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 15px;
   margin: 10px 0;
-  background-color: #f9f9f9;
+  background-color: var(--bg-secondary);
   transition: transform 0.2s;
 }
 
 .question-block:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px var(--shadow-color);
 }
 
 .question-block h2 {
   margin-top: 0;
   margin-bottom: 15px;
-  color: #333;
+  color: var(--secondary-color);
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   text-align: center;
 }
 
+.additional-slots-info {
+  text-align: center;
+  background-color: #e8f5e9;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.bonus-icon {
+  margin-right: 5px;
+  font-size: 1.2em;
+}
+
 .question-block button {
-  background-color: #4CAF50;
+  background-color: var(--primary-color);
   border: none;
   color: white;
   padding: 10px 0;
@@ -34,25 +49,65 @@
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s;
-  min-height: 44px; /* Мінімальна висота для зручного натискання на сенсорних пристроях */
+  min-height: 44px;
 }
 
-.question-block button:hover {
-  background-color: #45a049;
+.question-block button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.question-block button:disabled,
+.question-block button.disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.selected-questions-container {
+  margin-top: 15px;
 }
 
 .selected-question {
   margin-top: 15px;
   padding: 10px;
-  background-color: #e9f7ef;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
   border-radius: 4px;
-  word-break: break-word; /* Для того, щоб довгі питання не виходили за межі блоку */
+  word-break: break-word;
+  position: relative;
+}
+
+.selected-question.removed {
+  text-decoration: line-through;
+  opacity: 0.6;
+  background-color: #ffebee;
+}
+
+.removed-label {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background-color: #f44336;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+body.dark-mode .selected-question.removed {
+  background-color: #4a2c2a;
+}
+
+body.dark-mode .additional-slots-info {
+  background-color: #1b5e20;
+  color: #a5d6a7;
 }
 
 .selected-question h3 {
   margin-top: 0;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
-  color: #333;
+  color: var(--secondary-color);
 }
 
 .selected-question p {
@@ -85,4 +140,42 @@
   .selected-question {
     padding: 8px;
   }
+}
+
+.additional-slots-info {
+  text-align: center;
+  background-color: #e8f5e9;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.exchange-blocked-info {
+  text-align: center;
+  background-color: #ffebee;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+.warning-icon {
+  margin-right: 5px;
+  font-size: 1.2em;
+}
+
+/* Темна тема - після всіх інших стилів */
+body.dark-mode .additional-slots-info {
+  background-color: #1b5e20;
+  color: #a5d6a7;
+}
+
+body.dark-mode .exchange-blocked-info {
+  background-color: #4a2c2a;
+  color: #ffcdd2;
+  border-color: #4a2c2a;
 }
